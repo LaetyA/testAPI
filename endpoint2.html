@@ -1,0 +1,370 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualisation des données - Endpoint 1</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Visualisation des données - Endpoint 1</h1>
+  <canvas id="myChart"></canvas>
+
+  <script>
+    // Données du fichier JSON
+    const jsonData = {
+      "raw_data": [
+        {
+          "AUX1": 1365.0,
+          "AUX1_INPUT": null,
+          "AUX2": 1552.0,
+          "AUX2_INPUT": null,
+          "AUX3": 1681.0,
+          "co": 237.0,
+          "extT": 253.0,
+          "intT": 357.0,
+          "lat": 5.369297504425049,
+          "lon": -3.958930253982544,
+          "no2": 9.0,
+          "o3": 9.0,
+          "pm10": 25.0,
+          "pm25": 8.0,
+          "rh": 895.0,
+          "utc_timestamp": "2023-08-10 00:00:08"
+        },
+        // ... Autres entrées du tableau ...
+      ]
+    };
+
+    // Préparation des données pour le graphique
+    const labels = jsonData.raw_data.map(entry => entry.utc_timestamp);
+    const pm25Data = jsonData.raw_data.map(entry => entry.pm25);
+    const coData = jsonData.raw_data.map(entry => entry.co);
+    const extTData = jsonData.raw_data.map(entry => entry.extT);
+    const no2Data = jsonData.raw_data.map(entry => entry.no2);
+
+    // Création du graphique
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'PM2.5',
+            data: pm25Data,
+            borderColor: 'rgb(75, 192, 192)',
+            borderWidth: 1,
+            fill: false
+          },
+          {
+            label: 'CO',
+            data: coData,
+            borderColor: 'rgb(255, 0, 0)',
+            borderWidth: 1,
+            fill: false
+          },
+          {
+            label: 'ExtT',
+            data: extTData,
+            borderColor: 'rgb(0, 0, 255)',
+            borderWidth: 1,
+            fill: false
+          },
+          {
+            label: 'NO2',
+            data: no2Data,
+            borderColor: 'rgb(255, 165, 0)',
+            borderWidth: 1,
+            fill: false
+          }
+        ]
+      }
+    });
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualisation des données - Endpoint 1</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Visualisation des données - Endpoint 1</h1>
+  <canvas id="myChart"></canvas>
+
+  <script>
+    // Données du fichier JSON
+    const jsonData = {
+      "raw_data": [
+        {
+          "AUX1": 1365.0,
+          "AUX1_INPUT": null,
+          "AUX2": 1552.0,
+          "AUX2_INPUT": null,
+          "AUX3": 1681.0,
+          "co": 237.0,
+          "extT": 253.0,
+          "intT": 357.0,
+          "lat": 5.369297504425049,
+          "lon": -3.958930253982544,
+          "no2": 9.0,
+          "o3": 9.0,
+          "pm10": 25.0,
+          "pm25": 8.0,
+          "rh": 895.0,
+          "utc_timestamp": "2023-08-10 00:00:08"
+        },
+        // ... Autres entrées du tableau ...
+        {
+            "AUX1": 1365.0,
+            "AUX1_INPUT": null,
+            "AUX2": 1551.0,
+            "AUX2_INPUT": null,
+            "AUX3": 1681.0,
+            "co": 236.0,
+            "extT": 253.0,
+            "intT": 356.0,
+            "lat": 5.369297504425049,
+            "lon": -3.958930253982544,
+            "no2": 5.0,
+            "o3": 5.0,
+            "pm10": 22.0,
+            "pm25": 7.0,
+            "rh": 895.0,
+            "utc_timestamp": "2023-08-10 00:02:08"
+        },
+        {
+            "AUX1": 1370.0,
+            "AUX1_INPUT": null,
+            "AUX2": 1555.0,
+            "AUX2_INPUT": null,
+            "AUX3": 1685.0,
+            "co": 237.0,
+            "extT": 253.0,
+            "intT": 356.0,
+            "lat": 5.369297504425049,
+            "lon": -3.958930253982544,
+            "no2": 9.0,
+            "o3": 9.0,
+            "pm10": 22.0,
+            "pm25": 7.0,
+            "rh": 896.0,
+            "utc_timestamp": "2023-08-10 00:04:07"
+        },
+        {
+            "AUX1": 1369.0,
+            "AUX1_INPUT": null,
+            "AUX2": 1554.0,
+            "AUX2_INPUT": null,
+            "AUX3": 1685.0,
+            "co": 238.0,
+            "extT": 253.0,
+            "intT": 357.0,
+            "lat": 5.369297504425049,
+            "lon": -3.958930253982544,
+            "no2": 11.0,
+            "o3": 11.0,
+            "pm10": 22.0,
+            "pm25": 7.0,
+            "rh": 897.0,
+            "utc_timestamp": "2023-08-10 00:06:07"
+        },
+        {
+            "AUX1": 1369.0,
+            "AUX1_INPUT": null,
+            "AUX2": 1554.0,
+            "AUX2_INPUT": null,
+            "AUX3": 1685.0,
+            "co": 243.0,
+            "extT": 252.0,
+            "intT": 356.0,
+            "lat": 5.369297504425049,
+            "lon": -3.958930253982544,
+            "no2": 3.0,
+            "o3": 3.0,
+            "pm10": 23.0,
+            "pm25": 7.0,
+            "rh": 895.0,
+            "utc_timestamp": "2023-08-10 00:08:07"
+        },
+        {
+            "AUX1": 1369.0,
+            "AUX1_INPUT": null,
+            "AUX2": 1553.0,
+            "AUX2_INPUT": null,
+            "AUX3": 1683.0,
+            "co": 240.0,
+            "extT": 252.0,
+            "intT": 357.0,
+            "lat": 5.369297504425049,
+            "lon": -3.958930253982544,
+            "no2": 0.0,
+            "o3": 0.0,
+            "pm10": 23.0,
+            "pm25": 7.0,
+            "rh": 895.0,
+            "utc_timestamp": "2023-08-10 00:10:07"
+        },
+        {
+            "AUX1": 1366.0,
+            "AUX1_INPUT": null,
+            "AUX2": 1552.0,
+            "AUX2_INPUT": null,
+            "AUX3": 1683.0,
+            "co": 240.0,
+            "extT": 252.0,
+            "intT": 357.0,
+            "lat": 5.369297504425049,
+            "lon": -3.958930253982544,
+            "no2": 7.0,
+            "o3": 7.0,
+            "pm10": 23.0,
+            "pm25": 7.0,
+            "rh": 897.0,
+            "utc_timestamp": "2023-08-10 00:12:07"
+        },
+        {
+            "AUX1": 1368.0,
+            "AUX1_INPUT": null,
+            "AUX2": 1552.0,
+            "AUX2_INPUT": null,
+            "AUX3": 1684.0,
+            "co": 238.0,
+            "extT": 252.0,
+            "intT": 356.0,
+            "lat": 5.369297504425049,
+            "lon": -3.958930253982544,
+            "no2": 9.0,
+            "o3": 9.0,
+            "pm10": 24.0,
+            "pm25": 7.0,
+            "rh": 897.0,
+            "utc_timestamp": "2023-08-10 00:14:06"
+        },
+        {
+            "AUX1": 1367.0,
+            "AUX1_INPUT": null,
+            "AUX2": 1555.0,
+            "AUX2_INPUT": null,
+            "AUX3": 1683.0,
+            "co": 240.0,
+            "extT": 252.0,
+            "intT": 356.0,
+            "lat": 5.369297504425049,
+            "lon": -3.958930253982544,
+            "no2": 9.0,
+            "o3": 9.0,
+            "pm10": 24.0,
+            "pm25": 7.0,
+            "rh": 895.0,
+            "utc_timestamp": "2023-08-10 00:16:06"
+        },
+        {
+            "AUX1": 1367.0,
+            "AUX1_INPUT": null,
+            "AUX2": 1552.0,
+            "AUX2_INPUT": null,
+            "AUX3": 1683.0,
+            "co": 240.0,
+            "extT": 252.0,
+            "intT": 356.0,
+            "lat": 5.369297504425049,
+            "lon": -3.958930253982544,
+            "no2": 9.0,
+            "o3": 9.0,
+            "pm10": 24.0,
+            "pm25": 8.0,
+            "rh": 897.0,
+            "utc_timestamp": "2023-08-10 00:18:06"
+        },
+      ]
+    };
+
+    // Préparation des données pour le graphique
+    const labels = jsonData.raw_data.map(entry => entry.utc_timestamp);
+    const aux1Data = jsonData.raw_data.map(entry => entry.AUX1);
+    const aux2Data = jsonData.raw_data.map(entry => entry.AUX2);
+    const aux3Data = jsonData.raw_data.map(entry => entry.AUX3);
+    const coData = jsonData.raw_data.map(entry => entry.co);
+    const extTData = jsonData.raw_data.map(entry => entry.extT);
+    const intTData = jsonData.raw_data.map(entry => entry.intT);
+    const latData = jsonData.raw_data.map(entry => entry.lat);
+    const lonData = jsonData.raw_data.map(entry => entry.lon);
+    const no2Data = jsonData.raw_data.map(entry => entry.no2);
+    const o3Data = jsonData.raw_data.map(entry => entry.o3);
+    const pm10Data = jsonData.raw_data.map(entry => entry.pm10);
+    const pm25Data = jsonData.raw_data.map(entry => entry.pm25);
+    const rhData = jsonData.raw_data.map(entry => entry.rh);
+
+    // Création du graphique
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'AUX1',
+            data: aux1Data,
+            borderColor: 'rgb(255, 0, 0)',
+            borderWidth: 1,
+            fill: false
+          },
+          {
+            label: 'AUX2',
+            data: aux2Data,
+            borderColor: 'rgb(0, 255, 0)',
+            borderWidth: 1,
+            fill: false
+          },
+          {
+            label: 'AUX3',
+            data: aux3Data,
+            borderColor: 'rgb(0, 0, 255)',
+            borderWidth: 1,
+            fill: false
+          },
+          // Ajoutez les autres séries de données ici...
+          {
+            label: 'PM2.5',
+            data: pm25Data,
+            borderColor: 'rgb(75, 192, 192)',
+            borderWidth: 1,
+            fill: false
+          },
+          {
+            label: 'CO',
+            data: coData,
+            borderColor: 'rgb(255, 0, 0)',
+            borderWidth: 1,
+            fill: false
+          },
+          {
+            label: 'ExtT',
+            data: extTData,
+            borderColor: 'rgb(0, 0, 255)',
+            borderWidth: 1,
+            fill: false
+          },
+          {
+            label: 'NO2',
+            data: no2Data,
+            borderColor: 'rgb(255, 165, 0)',
+            borderWidth: 1,
+            fill: false
+          },
+          
+        ]
+      }
+    });
+  </script>
+</body>
+</html>
+
